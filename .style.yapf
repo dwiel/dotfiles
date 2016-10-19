@@ -1,0 +1,19 @@
+[style]
+based_on_style = pep8
+dedent_closing_brackets = true
+coalesce_brackets = true
+split_before_first_argument = true
+split_penalty_for_added_line_split = 10000
+split_penalty_after_opening_bracket = 0
+split_arguments_when_comma_terminated = true 
+
+indent_dictionary_value = false
+#  indent the dictionary value if it cannot fit on the same line as the
+#  dictionary key. for example:
+#  
+#    config = {
+#        'key1':
+#            'value1',
+#        'key2': value1 +
+#                value2,
+#    }
