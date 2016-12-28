@@ -43,8 +43,7 @@ filetype plugin indent on
     let g:pymode_rope_autoimport_bind = '<C-c>rai'
     " let g:pymode_lint_on_write = 0
     " let g:pymode_lint_unmodified = 0
-    " let g:pymode_rope_project_root = "~/graphiti"
-    let g:pymode_rope_project_root = "~/sgi"
+    let g:pymode_rope_project_root = "~/private-ngraph"
     " let g:pymode = 0
 
     nnoremap <Leader>nf :NosetestFile<CR>
