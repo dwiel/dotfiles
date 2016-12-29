@@ -34,6 +34,7 @@ filetype plugin indent on
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
     Plug 'mindriot101/vim-yapf'
+    Plug 'https://github.com/tpope/vim-commentary.git'
 
     call plug#end()
 
