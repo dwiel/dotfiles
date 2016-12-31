@@ -13,9 +13,9 @@ RUN echo "    . /etc/bash_completion" >> ~/.bashrc
 RUN echo "fi" >> ~/.bashrc
 
 # setup git config options
-RUN git config --global user.email "zach@nervanasys.com"
+RUN git config --global user.email "zdwiel@gmail.com"
 RUN git config --global user.name "Zach Dwiel"
-RUN git config --global push.default matching
+RUN git config --global push.default current
 
 # install vim plugins
 RUN apt-get install -y curl
