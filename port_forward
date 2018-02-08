@@ -1,0 +1,7 @@
+#!/bin/bash
+
+while true
+do
+    kubectl port-forward jupyter 8890:8888
+    sleep 5
+done
