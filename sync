@@ -1,0 +1,7 @@
+#!/bin/bash
+
+while true
+do
+    unison src/$1 ssh://10.105.186.110//nfs/site/home/zdwiel/src/$1 -repeat 1 -times -logfile /tmp/unison.$1.log -force newer -ignore "Path venv" -ignore "Path .git" -ignore "Path .tox" -ignore "Path contrib/docker/gym-bit-flip" -ignore "Path .cache" -ignore "Path .magicindex.json" -ignore "Path .pytest_cache" -ignore "Path .ropeproject" -ignore "Name *.egg-info"
+    sleep 5
+done

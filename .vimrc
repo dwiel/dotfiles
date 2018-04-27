@@ -22,49 +22,47 @@ set formatoptions=cq textwidth=72 foldignore= wildignore+=*.py[co]
 syntax on
 filetype plugin indent on
 
-" try
-    call pathogen#infect()
-    call pathogen#helptags()
+call pathogen#infect()
+call pathogen#helptags()
 
-    call plug#begin('~/.vim/plugged')
+call plug#begin('~/.vim/plugged')
 
-    Plug 'klen/python-mode', { 'for': ['python'] }
-    Plug 'https://github.com/JarrodCTaylor/vim-python-test-runner'
-    Plug 'https://github.com/ervandew/supertab.git'
+Plug 'klen/python-mode', { 'for': ['python'] }
+Plug 'https://github.com/JarrodCTaylor/vim-python-test-runner'
+Plug 'https://github.com/ervandew/supertab.git'
 
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-    Plug 'junegunn/fzf.vim'
-    Plug 'mindriot101/vim-yapf'
-    Plug 'https://github.com/tpope/vim-commentary.git'
-    " Plug 'https://github.com/VoiceCode/vim-voicecode'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'mindriot101/vim-yapf'
+Plug 'https://github.com/tpope/vim-commentary.git'
+" Plug 'https://github.com/VoiceCode/vim-voicecode'
 
-    call plug#end()
+call plug#end()
 
-    let g:pymode_lint_ignore = "E501,W"
-    " let g:pymode_lint_checkers = ["xyz"] 
-    let g:pymode_rope_goto_definition_bind = "<C-]>"
-    let g:pymode_rope_autoimport_bind = '<C-c>rai'
-    " let g:pymode_lint_on_write = 0
-    " let g:pymode_lint_unmodified = 0
-    let g:pymode_rope_project_root = "~/private-ngraph"
-    " let g:pymode = 0
+let g:pymode_lint_ignore = "E501,W"
+" let g:pymode_lint_checkers = ["xyz"] 
+let g:pymode_rope_goto_definition_bind = "<C-]>"
+let g:pymode_rope_autoimport_bind = '<C-c>rai'
+" let g:pymode_lint_on_write = 0
+" let g:pymode_lint_unmodified = 0
+" let g:pymode_rope_project_root = "~/src/async_deep_reinforce"
+" let g:pymode_rope_project_root = "~/src/ssc-32u"
+let g:pymode_rope_project_root = "~/src/gym-arm"
+" let g:pymode = 0
 
-    nnoremap <Leader>nf :NosetestFile<CR>
-    nnoremap <Leader>nc :NosetestClass<CR>
-    nnoremap <Leader>nm :NosetestMethod<CR>
-    nnoremap <Leader>nb :NosetestBaseMethod<CR>
-    nnoremap <Leader>rr :RerunLastTests<CR>
+nnoremap <Leader>nf :NosetestFile<CR>
+nnoremap <Leader>nc :NosetestClass<CR>
+nnoremap <Leader>nm :NosetestMethod<CR>
+nnoremap <Leader>nb :NosetestBaseMethod<CR>
+nnoremap <Leader>rr :RerunLastTests<CR>
 
-    " <leader>y runs yapf on entire file
-    " this version changes the position of the cursor after running yapf
-    " which is jarring, while the plugin does not have this problem
-    " autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
-    :nnoremap <leader>y :Yapf<cr>
+" <leader>y runs yapf on entire file
+" this version changes the position of the cursor after running yapf
+" which is jarring, while the plugin does not have this problem
+" autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
+:nnoremap <leader>y :Yapf<cr>
 
-    map <F4> :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
+map <F4> :e %:p:s,.hpp$,.X123X,:s,.cpp$,.hpp,:s,.X123X$,.cpp,<CR>
 
-    " syntasitc defines :Errors command which means :E is now ambiguous
-    command E Ex
-" catch
-" endtry
-
+" syntasitc defines :Errors command which means :E is now ambiguous
+command E Ex
