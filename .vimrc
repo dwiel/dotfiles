@@ -1,3 +1,4 @@
+set shell=/bin/bash
 set nu
 set expandtab
 set ts=4
@@ -35,6 +36,7 @@ filetype plugin indent on
     Plug 'junegunn/fzf.vim'
     Plug 'mindriot101/vim-yapf'
     Plug 'https://github.com/tpope/vim-commentary.git'
+    " Plug 'https://github.com/VoiceCode/vim-voicecode'
 
     call plug#end()
 
