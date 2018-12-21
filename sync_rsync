@@ -1,0 +1,31 @@
+#!/bin/bash
+
+PROJECT=$1
+SERVER=${2:-nervana-titanxp10.fm.intel.com}
+REMOTE_HOME=${3:-/nfs/site/home/zdwiel}
+
+sync ()
+{
+  rsync -avz \
+    --exclude 'venv' \
+    --exclude '.git' \
+    --exclude '.tox' \
+    --exclude 'contrib/docker/gym-bit-flip' \
+    --exclude '.cache' \
+    --exclude '__pycache__' \
+    --exclude '.magicindex.json' \
+    --exclude '.pytest_cache' \
+    --exclude '.ropeproject' \
+    --exclude '*.egg-info' \
+    --exclude 'docker-rl-gym/venv' \
+    --exclude '.venv' \
+    --exclude '*.pyc' \
+    --exclude '*.part' \
+    --exclude '*.mp4' \
+    --exclude '.DS_store' \
+    src/$PROJECT $SERVER:$REMOTE_HOME/src
+}
+
+sync
+
+fswatch src/$PROJECT | while read f ; do echo $f ; sync ; done
