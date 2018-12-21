@@ -1,7 +1,9 @@
 #!/bin/bash
 
+SERVER=${2:-nervana-titanxp12.fm.intel.com}
+REMOTE_HOME=${3:-/nfs/site/home/zdwiel}
 while true
 do
-    unison src/$1 ssh://10.105.186.110//nfs/site/home/zdwiel/src/$1 -repeat 1 -times -logfile /tmp/unison.$1.log -force newer -ignore "Path venv" -ignore "Path .git" -ignore "Path .tox" -ignore "Path contrib/docker/gym-bit-flip" -ignore "Path .cache" -ignore "Path .magicindex.json" -ignore "Path .pytest_cache" -ignore "Path .ropeproject" -ignore "Name *.egg-info"
+    unison src/$1 ssh://$SERVER/$REMOTE_HOME/src/$1 -ui text -watch -batch -times -logfile /tmp/unison.$1.log -ignore "Path venv" -ignore "Path .git" -ignore "Path .tox" -ignore "Path contrib/docker/gym-bit-flip" -ignore "Path .cache" -ignore "Path .magicindex.json" -ignore "Path .pytest_cache" -ignore "Path .ropeproject" -ignore "Name *.egg-info" -ignore "Path docker-rl-gym/venv" -ignore "Path .venv" -ignore "Name *.pyc" -ignore "Name *.part" -ignore "Name *.mp4" -ignore "Name .DS_store" -ignorearchives
     sleep 5
 done
