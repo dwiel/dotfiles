@@ -25,3 +25,11 @@ vim +PlugInstall +qall
 
 # yapf needed for vim plugins
 sudo pip install yapf
+
+# OS X:
+# curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+# chmod a-x ~/.git-completion.bash
+#
+# echo "if [ -f ~/.git-completion.bash ]; then" >> ~/.bashrc
+# echo "  . ~/.git-completion.bash" >> ~/.bashrc
+# echo "fi" >> ~/.bashrc
