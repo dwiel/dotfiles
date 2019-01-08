@@ -23,9 +23,9 @@ sync ()
     --exclude '*.part' \
     --exclude '*.mp4' \
     --exclude '.DS_store' \
-    src/$PROJECT $SERVER:$REMOTE_HOME/src
+    $HOME/src/$PROJECT $SERVER:$REMOTE_HOME/src
 }
 
 sync
 
-fswatch src/$PROJECT | while read f ; do echo $f ; sync ; done
+fswatch $HOME/src/$PROJECT | while read f ; do echo $f ; sync ; done
