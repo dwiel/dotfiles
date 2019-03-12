@@ -3,6 +3,9 @@ import os
 from multiprocessing import Process
 
 
+TITAN_HOST = "nervana-titanxp10.fm.intel.com"
+
+
 def system_process(command):
     os.system(command)
 
@@ -18,8 +21,11 @@ def sync(project_name, server_name=None, remote_home=None):
 
 def main():
     processes = [
-        sync("coach", "nervana-titanxp10.fm.intel.com", "/nfs/site/home/zdwiel"),
-        sync("bottleneck", "nervana-titanxp10.fm.intel.com", "/nfs/site/home/zdwiel"),
+        sync("ai-lab-rl", TITAN_HOST, "/nfs/site/home/zdwiel"),
+        sync("coach", TITAN_HOST, "/nfs/site/home/zdwiel"),
+        sync("bottleneck", TITAN_HOST, "/nfs/site/home/zdwiel"),
+        sync("hyper-visual", TITAN_HOST, "/nfs/site/home/zdwiel"),
+        sync("flexible_robotics", TITAN_HOST, "/nfs/site/home/zdwiel"),
     ]
 
     for process in processes:
